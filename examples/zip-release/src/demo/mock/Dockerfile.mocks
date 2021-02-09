@@ -1,0 +1,7 @@
+FROM openjdk:11
+COPY cats-mock.feature /workspace/cats-mock.feature
+RUN wget -O /karate.jar https://github.com/intuit/karate/releases/download/v0.9.6/karate-0.9.6.jar
+
+EXPOSE 8080
+
+CMD java -jar /karate.jar -m /workspace/cats-mock.feature -p 8080

@@ -1,0 +1,5 @@
+FROM openjdk:11
+COPY cats-test.feature /workspace/cats-test.feature
+RUN wget -O /karate.jar https://github.com/intuit/karate/releases/download/v0.9.6/karate-0.9.6.jar
+
+CMD java -jar /karate.jar /workspace/cats-test.feature
