@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile.front
+    ports:
+      - "80:80"
+
+  mocks:
+    build:
+      context: .
+      dockerfile: Dockerfile.mocks
+    ports:
+      - "8080:8080"
